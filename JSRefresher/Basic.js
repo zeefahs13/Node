@@ -10,6 +10,10 @@
  * 
  * You can even redeclare var with same variable name as its used previously
  * 
+ * Var will have either function scope or global scope
+ * 
+ * Block level scope doesnt hold good
+ * 
  * ############### let ############################
  * 
  * You can declare the variable only once and scope is limited to block in which its declared or initialised
@@ -22,9 +26,30 @@
  * 
  */
 
-var name = 'Test';
+//################### VAR SCOPE TEST ###################
+
+var name1 = 'Test';
 var age=44;
 var isFalse=false;
 var percent=33.5;
 
-var name='Test2';
+function vartest(){
+name1='Test2';
+console.log('Changed name to Test2'+name1);
+
+}
+
+//################# LET SCOPE TEST ##################
+
+/**********   LET  */
+let name2='let0'
+function lettest(){
+    let name2='let1';
+    console.log('During func call'+name2);
+}
+
+vartest();
+console.log('Printing value of var'+name1);//Test2
+console.log('Before func call'+name2);
+lettest();
+console.log('After func call'+name2);
