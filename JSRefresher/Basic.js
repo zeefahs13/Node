@@ -26,6 +26,14 @@
  * 
  */
 
+
+/**************************
+ * undefined in javascript is similiar to null in java 
+ * A function without any return statement
+ * 
+ */
+
+
 //################### VAR SCOPE TEST ###################
 
 var name1 = 'Test';
@@ -36,7 +44,6 @@ var percent=33.5;
 function vartest(){
 name1='Test2';
 console.log('Changed name to Test2'+name1);
-
 }
 
 //################# LET SCOPE TEST ##################
