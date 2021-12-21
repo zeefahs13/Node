@@ -360,5 +360,72 @@ export class IExport{
  */
 
 
+/******************************* NAMESPACES IN TYPESCRIPT ********************************* 
+ * Namespaces are used to logically group functionalities that can fit into one bucket.
+ * Namespace can have interfaces, class, varaibles, functions
+ * 
+ *  ## NAMESPACE DEFINITION
+ * 
+ * namespace StringUtils{
+ * 
+ * }
+ * 
+ * Inorder to use namespace utilities, we need to have export keyword for every function or variable inorder to use
+ * it in different modules.
+ * 
+*/
 
+
+namespace StringUtils{
+
+    export function ToCapital(str: string): string {
+        return str.toUpperCase();
+    }
+
+    export function SubString(str: string, from: number, length: number = 0): string {
+        return str.substr(from, length);
+    }
+
+
+}
+
+
+/************* USAGE OF NAMESPACES IN OTHER MODULES ********************************
+ * 
+ * Here the path should have compiled .js file
+ * 
+ * /// <reference path="StringUtility.js" />
+ * 
+ * 
+ */
+
+/********** COMPILATION OF NAMESPACES IN TYPESCRIPT *********************************
+ * 
+ * tsc --outFile C:\MyTypeScriptNameSpaces\StringUtility.js C:\MyTypeScriptNameSpaces\StringUtility.ts
+ * 
+ * 
+ *  ## Compile multiple .ts files into single .js file
+ * 
+ *  tsc --outFile File.js File1.ts File2.ts File3.ts.. FileN.ts
+ * 
+ *  Here in above example multiple files will get compiled into single File.js
+ * 
+ */
+
+
+/********************* NAMESPACE VS MODULE IN TYPESCRIPT *****************************************
+ * 
+ *  Used for logical grouping of functionalities with local scoping. | Used to organize the code in separate files and not pollute the global scope.
+ *  Compile using the --outFile command.                             |  Compile using the --module command
+ *  Namespaces cannot declare their dependencies                     | Modules can declare their dependencies
+ *  Need to include .js file in html with script tag                 | Must include with Module loader API specified at compilation 
+ * 
+ */
+
+
+/******************** GENERICS IN TYPESCRIPT *******************************************************
+ * 
+ * 
+ * 
+ */
 
